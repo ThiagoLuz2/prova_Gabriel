@@ -2,12 +2,16 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>Cadastro</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-       <ion-item>
+      <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input v-model="nome" placeholder="Digite seu nome"></ion-input>
+        </ion-item>
+      <ion-item>
           <ion-label position="floating">senha</ion-label>
           <ion-input  type="password" v-model="senha" placeholder="Digite sua senha"></ion-input>
         </ion-item>
@@ -44,11 +48,15 @@ import { IonContent, IonHeader, IonButton, IonPage, IonTitle, IonToolbar, IonInp
 
 const senha = ref('');
 const email = ref('');
+const nome = ref('');
 const ConfirmarSenha = ref('');
 
 const confirmarCadastro = async () => {
   if (senha.value !== ConfirmarSenha.value) {
     await mostrarToast('As senhas não coincidem.', 'danger');
+    return;
+  } if (!email.value || !senha.value || !nome.value) {
+    await mostrarToast('Preencha todos os campos.', 'warning');
     return;
   }
 

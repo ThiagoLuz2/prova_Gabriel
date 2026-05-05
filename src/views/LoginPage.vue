@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>azul</ion-title>
+        <ion-title>Login</ion-title>
       </ion-toolbar>
     </ion-header>
 

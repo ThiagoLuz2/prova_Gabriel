@@ -34,7 +34,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import router from '@/router';
-import { IonContent, IonHeader, IonButton, IonPage, IonTitle, IonToolbar, IonInput, IonLabel, IonItem, toastController } from '@ionic/vue';
+import { IonContent, IonHeader, IonButton, IonPage, IonTitle, IonToolbar, IonInput, IonLabel, IonItem, toastController  } from '@ionic/vue';
 
 const email = ref('');
 const senhaEncontrada = ref(false);
