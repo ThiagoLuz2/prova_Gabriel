@@ -41,6 +41,11 @@ const senhaEncontrada = ref(false);
 const senhaExibida = ref('');
 
 const verificarEmail = async () => {
+  if (!email.value || email.value.trim() === '') {
+    await mostrarToast('Por favor, digite seu e-mail', 'warning');
+    return;
+  }
+
   const emailCadastro = localStorage.getItem('cadastroEmail');
   const senhaCadastro = localStorage.getItem('cadastroSenha');
 
@@ -50,6 +55,7 @@ const verificarEmail = async () => {
   if (email.value === emailCadastro) {
     senhaExibida.value = senhaCadastro || '';
     senhaEncontrada.value = true;
+  
     await mostrarToast('E-mail encontrado! Sua senha está sendo exibida.', 'success');
   } else {
     senhaEncontrada.value = false;

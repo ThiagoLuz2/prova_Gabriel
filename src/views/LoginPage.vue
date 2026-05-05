@@ -9,7 +9,7 @@
     <ion-content :fullscreen="true">
       <ion-item>
         <ion-label position="floating">senha</ion-label>
-        <ion-input v-model="senha" placeholder="Digite sua senha"></ion-input>
+        <ion-input type="password" v-model="senha" placeholder="Digite sua senha"></ion-input>
       </ion-item>
 
       <ion-item>
